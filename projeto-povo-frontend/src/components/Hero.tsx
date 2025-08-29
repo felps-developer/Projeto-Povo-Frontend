@@ -11,13 +11,15 @@ import {
   Flex,
   useColorModeValue,
   Icon,
-} from '@chakra-ui/react';
-import { FaGraduationCap, FaUserTie } from 'react-icons/fa';
+  Image,
+} from "@chakra-ui/react";
+import {FaGraduationCap, FaUserTie} from "react-icons/fa";
+import bannerImage from "../assets/aeda40b75b57650950db0dee0cd895ddc3334eb1.png";
 
 const Hero = () => {
   const bgGradient = useColorModeValue(
-    'linear(to-br, brand.700, brand.800)',
-    'linear(to-br, brand.800, brand.900)'
+    "linear(to-br, brand.700, brand.800)",
+    "linear(to-br, brand.800, brand.900)"
   );
 
   return (
@@ -31,11 +33,11 @@ const Hero = () => {
     >
       <Container maxW="container.xl" py={20}>
         <Grid
-          templateColumns={{base: "1fr", lg: "1fr 1fr"}}
-          gap={12}
+          templateColumns={{base: "1fr", md: "1fr 1fr"}}
+          gap={{base: 8, md: 12}}
           alignItems="center"
         >
-          <GridItem>
+          <GridItem order={{base: 2, md: 1}}>
             <VStack spacing={8} align="start">
               <HStack spacing={4} flexWrap="wrap">
                 <Badge
@@ -61,7 +63,7 @@ const Hero = () => {
               </HStack>
 
               <Text
-                fontSize={{base: "4xl", md: "5xl", lg: "6xl"}}
+                fontSize={{base: "3xl", sm: "4xl", md: "5xl", lg: "6xl"}}
                 fontWeight="bold"
                 lineHeight="1.2"
                 textShadow="2px 2px 4px rgba(0,0,0,0.3)"
@@ -69,7 +71,12 @@ const Hero = () => {
                 Secretaria Escolar
               </Text>
 
-              <Text fontSize="lg" lineHeight="1.6" opacity={0.9} maxW="600px">
+              <Text
+                fontSize={{base: "md", md: "lg"}}
+                lineHeight="1.6"
+                opacity={0.9}
+                maxW="600px"
+              >
                 Capacite-se para atuar na gestão escolar com eficiência e
                 profissionalismo. Este curso prepara você para gerenciar
                 processos administrativos, documentação estudantil e garantir o
@@ -111,26 +118,27 @@ const Hero = () => {
           </GridItem>
 
           <GridItem
-            display={{base: "none", lg: "flex"}}
+            order={{base: 1, md: 2}}
+            display="flex"
             justifyContent="center"
           >
             <Box
-              w="400px"
-              h="500px"
-              bg="whiteAlpha.100"
+              w={{base: "280px", sm: "320px", md: "350px", lg: "400px"}}
+              h={{base: "350px", sm: "400px", md: "450px", lg: "500px"}}
               borderRadius="xl"
-              border="2px dashed"
-              borderColor="whiteAlpha.300"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
+              overflow="hidden"
+              boxShadow="2xl"
+              position="relative"
+              mb={{base: 8, md: 0}}
             >
-              <VStack spacing={4} color="whiteAlpha.700">
-                <Icon as={FaUserTie} boxSize={16} />
-                <Text fontSize="lg" textAlign="center">
-                  Imagem da Secretária Escolar
-                </Text>
-              </VStack>
+              <Image
+                src={bannerImage}
+                alt="Secretária Escolar"
+                w="100%"
+                h="100%"
+                objectFit="cover"
+                borderRadius="xl"
+              />
             </Box>
           </GridItem>
         </Grid>
