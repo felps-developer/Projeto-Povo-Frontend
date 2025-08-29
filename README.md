@@ -4,16 +4,17 @@ Landing page responsiva para exibir informações sobre os cursos da UANE, desen
 
 ## 🚀 Tecnologias Utilizadas
 
-- **React 18** - Biblioteca JavaScript para construção de interfaces
+- **React 19.1.1** - Biblioteca JavaScript para construção de interfaces
 - **TypeScript** - Superset do JavaScript com tipagem estática
-- **Chakra UI** - Biblioteca de componentes React com design system consistente
+- **Chakra UI 2.10.9** - Biblioteca de componentes React com design system consistente
 - **Vite** - Build tool moderna e rápida
 - **Axios** - Cliente HTTP para requisições à API
 - **React Icons** - Biblioteca de ícones
+- **Framer Motion 11.0.0** - Biblioteca de animações
 
 ## 📋 Pré-requisitos
 
-- Node.js (versão 16 ou superior)
+- Node.js (versão 18 ou superior)
 - npm ou yarn
 
 ## 🛠️ Instalação
@@ -22,7 +23,7 @@ Landing page responsiva para exibir informações sobre os cursos da UANE, desen
 
 ```bash
 git clone <url-do-repositorio>
-cd projeto-povo-frontend
+cd Projeto-Povo-Frontend
 ```
 
 2. Instale as dependências:
@@ -30,6 +31,12 @@ cd projeto-povo-frontend
 ```bash
 npm install
 ```
+
+> **Nota**: Se encontrar conflitos de dependências, o projeto já está configurado com versões compatíveis. Em caso de problemas, você pode usar:
+>
+> ```bash
+> npm install --legacy-peer-deps
+> ```
 
 3. Execute o projeto em modo de desenvolvimento:
 
@@ -74,6 +81,7 @@ src/
 - **Componentização**: Estrutura modular com componentes reutilizáveis
 - **TypeScript**: Tipagem estática para maior segurança e produtividade
 - **Chakra UI**: Design system consistente e acessível
+- **Framer Motion**: Animações suaves e interativas
 - **Responsividade**: Layout adaptativo para diferentes dispositivos
 - **Performance**: Otimizações com Vite e lazy loading
 - **Acessibilidade**: Componentes acessíveis seguindo padrões WCAG
@@ -129,10 +137,41 @@ npm run build
 
 3. Faça o upload dos arquivos para seu servidor web
 
+## 🔧 Troubleshooting
+
+### Problemas Comuns
+
+**Erro de conflito de dependências:**
+
+```bash
+npm ERR! ERESOLVE could not resolve
+```
+
+**Solução:** O projeto já está configurado com versões compatíveis. Use:
+
+```bash
+npm install --legacy-peer-deps
+```
+
+**Erro de versão do Node.js:**
+Certifique-se de estar usando Node.js versão 18 ou superior:
+
+```bash
+node --version
+```
+
+**Problemas com TypeScript:**
+Se houver erros de TypeScript, reinstale as dependências:
+
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
+
 ## 📄 Licença
 
 Este projeto foi desenvolvido como teste prático para o Grupo de Comunicação O POVO.
 
 ## 👨‍💻 Desenvolvedor
 
-Desenvolvido com ❤️ usando React, TypeScript e Chakra UI.
+Desenvolvido com ❤️ usando React 19, TypeScript, Chakra UI e Framer Motion.
